@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Build Notes &mdash; easy69 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="easy69 0.1 documentation" href="index.html" />
+    <link rel="prev" title="BOM" href="bom.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="bom.html" title="BOM"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">easy69 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/Logo_small.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Build Notes</a><ul>
+<li><a class="reference internal" href="#opamps">Opamps</a></li>
+<li><a class="reference internal" href="#transformers">Transformers</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="bom.html"
+                        title="previous chapter">BOM</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/notes.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="build-notes">
+<h1>Build Notes<a class="headerlink" href="#build-notes" title="Permalink to this headline">¶</a></h1>
+<p>Before starting anything, you should familiarise yourself with the schematics and board layout.
+There are various choices to make when gathering components, such as which transformer and opamp to use.
+This decision will affect the value of some resistors and capacitors.</p>
+<div class="section" id="opamps">
+<h2>Opamps<a class="headerlink" href="#opamps" title="Permalink to this headline">¶</a></h2>
+<p>The resistors R15 and R14 set the makeup gain for the opamp.
+The easy69 has approximately a 15dB insertion loss. Therefore R15 and R14 should be scaled such that</p>
+<div class="math">
+\[20log(1 + R15/R14) =~ 15\]</div>
+<p>An example value would be <span class="math">\(R15 = 25K\)</span> and <span class="math">\(R14 = 5K1\)</span>. These are good values to choose for 2520-style opamps.
+There are of course numerous combinations of R14 and R15 that will give the correct gain and the best values to choose depends upon the opamp.
+Usually the manufacturer/designer should be able to give you some kind of indication as to a good pairing.</p>
+<p>C42 is a compensation cap, usually in the range 10 - 500pf. Some opamps already include a compensation cap, so you should check the datasheet as to whether this is necessary.</p>
+</div>
+<div class="section" id="transformers">
+<h2>Transformers<a class="headerlink" href="#transformers" title="Permalink to this headline">¶</a></h2>
+<p>Easy69 can take a Lundahl LL1517, Cinemag XXXX or Edcor XXXX transformer.
+The resistor and capacitor XXXX form a zobel network which is required to dampen <a href="#id1"><span class="problematic" id="id2">`</span></a>ringing`in a transformer.
+The correct values are dependent on the transformer and can usually be found via the datasheet or from the manufacturer.</p>
+<p>Capacitor ranges: Panasonic ECQE(F) ECQV(?)
+ECQE(B)</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="bom.html" title="BOM"
+             >previous</a> |</li>
+        <li><a href="index.html">easy69 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, James Ramm.
+    </div>
+  </body>
+</html>
