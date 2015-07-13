@@ -42,6 +42,7 @@ The first modules to be released will be:
 
 - EasyPSU: an 'onboard' PSU for powering a single rack
 - Easy69: an easy-to-build high quality EQ, based on the famous Helios type 69.
+- ISA-ish: A preamp. Something like the Focusrite ISA, but with modern components.
 
 
 
