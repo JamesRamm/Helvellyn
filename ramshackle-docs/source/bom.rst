@@ -1,8 +1,8 @@
 .. _bom
 
 
-BOM
-=====
+Bill Of Materials
+=====================
 
 .. _capacitors:
 Capacitors
